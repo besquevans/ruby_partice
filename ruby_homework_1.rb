@@ -11,8 +11,10 @@ class Array
 end
 
 class String
+  EMAIL = /\A[a-z0-9\+\-_\.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
   def is_email?
-    self.include?("@")
+    return !!EMAIL.match(self)
   end
 end
 
